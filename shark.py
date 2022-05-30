@@ -1,4 +1,5 @@
 from api import get
+#from api import ip_only
 import pyshark
 
 #modifique estas variáveis
@@ -28,6 +29,8 @@ def start():
 				else:
 					#tenta rastrear o ip do pacote
 					get(str(packet.ip.src))
+					#ip_only(str(packet.ip.src))
+					
 
 				# adiciona o ip de destino na lista 'vistos'
 				vistos.append(str(packet.ip.src))
