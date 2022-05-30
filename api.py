@@ -3,10 +3,10 @@ import requests
 import os
 
 #dicionário que conterá os dados do ip de destino
-out = {}
 
-def get(ip):
-	global out
+
+def get_location(ip):
+	out = {}
 
         #faz uma requisição para a api
 	r = requests.get(f'https://api.hackertarget.com/geoip/?q={ip}')
@@ -35,12 +35,23 @@ def get(ip):
 
         #printa os dados
 	print(f'''
-=============================
-IP: {out['IP Address']}
-Country: {out['Country']}
-State: {out['State']}
-City: {out['City']}
-=============================''')
+	=============================
+	IP: {out['IP Address']}
+	Country: {out['Country']}
+	State: {out['State']}
+	City: {out['City']}
+	=============================''')
+
+
+
+def ip_only(ip):
+	print(f'''
+	IP: {ip}
+	==============''')
+
+
+if __name__ == '__main__':
+	get_location('8.8.8.8')
 
 
 
