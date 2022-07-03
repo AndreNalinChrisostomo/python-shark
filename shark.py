@@ -1,4 +1,4 @@
-from api import get_location, ip_only, menu
+from api import get_location, ip_only
 import pyshark
 
 #modifique estas variáveis
